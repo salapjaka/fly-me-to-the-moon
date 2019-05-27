@@ -13,6 +13,7 @@ import firebase from './config/Fire';
 import axios from 'axios';
 import Flights from './Pages/Flights';
 import FlightDetail from './Pages/FlightDetail';
+import MyProfile from './Pages/MyProfile'
 
 class App extends Component {
     state = {
@@ -55,6 +56,8 @@ class App extends Component {
                             <Route exact path="/" component={ (props) => <Flights {...props} user={this.state.user} /> } />
                             <Route exact path="/flightdetail/:id" component={ (props) => <FlightDetail {...props} user={this.state.user} />} />
                             <Route exact path="/profile/:uid" component={ (props) => <Profile {...props} uid={this.state.user.uid} />} />
+                            <Route exact path="/myProfile" component={ (props) => <MyProfile {...props} uid={this.state.user.uid} />} />
+
                         </Switch>
                         </div>
         );

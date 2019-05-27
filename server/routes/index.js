@@ -59,4 +59,19 @@ router.post('/profile', (req, res, next)=>{
   
 })
 
+
+router.get('/allMyStuff/:uid', (req,res,next) => {
+  console.log('allMyStuffallMyStuffallMyStuffallMyStuffallMyStuffallMyStuff',req.params)
+  //if(!req.params.uid){ return res.end() }
+  let uid=req.params.uid
+  let promise1 = Package.find({uid})
+  let promise2 = Package.find( {"profile.uid": req.params.uid} )
+  let promise3 = Flight.find( {passengers :  { $elemMatch: { uid:  req.params.uid}  } })
+  
+  Promise.all([promise1, promise2, promise3]).then(data=>{
+    console.log('in here ',data)
+    res.json({myPacks:data[0], packsICarry:data[1], myFlights: data[2]})
+  })
+})
+
 module.exports = router;
