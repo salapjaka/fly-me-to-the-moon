@@ -14,6 +14,7 @@ import axios from 'axios';
 import Flights from './Pages/Flights';
 import FlightDetail from './Pages/FlightDetail';
 import MyProfile from './Pages/MyProfile'
+import './App.css'
 
 class App extends Component {
     state = {

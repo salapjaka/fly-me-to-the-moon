@@ -72,8 +72,8 @@ class Profile extends Component {
 
         <div className="form-group-column">
           <form onSubmit={this.savePackage}>
-            Content: <div class="col"><input onChange={this.addPackage} class="form-control" type="text" name="content"></input></div>
-            Price: <div class="col"><input onChange={this.addPackage} class="form-control" type="text" name="price"></input></div>
+            Content: <div className="col"><input onChange={this.addPackage} className="form-control" type="text" name="content"></input></div>
+            Price: <div className="col"><input onChange={this.addPackage} className="form-control" type="text" name="price"></input></div>
             <br></br>
             <div><button type="submit">Submit</button></div>
           </form>

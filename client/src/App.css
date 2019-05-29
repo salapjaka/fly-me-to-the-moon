@@ -1,0 +1,121 @@
+body {
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+
+}
+.link {
+  color: black;
+  display: flex;
+  /* text-align: left;
+  justify-content: center; */
+  flex-direction: column;
+  padding: 5px;
+  white-space: nowrap;
+}
+/* .link {
+  width: 50%;
+  margin:auto;
+  text-align: left;
+  justify-content: flex-start;
+} */
+a:hover {
+  text-decoration:none;
+ color:rgba(20, 56, 85, 0.568);
+}
+.container-1 {
+  position: relative;
+  text-align: center;
+  /* color: white; */
+  display: flex;
+  justify-content: start;
+}
+
+.container-2 {
+  position: relative;
+  text-align: center;
+  /* color: white; */
+}
+.logo{
+  font-family: 'Yesteryear', cursive, thin;
+  text-align: center;
+  font-size: 3em;
+}
+.moto{
+  font-family: 'Lato', sans-serif;
+}
+/* .my-nav {
+  display: flexbox;
+} */
+
+.Navbar {  
+  /* background-color: rgba(42, 42, 182, 0.466);   */
+  background-color: rgba(20, 56, 85, 0.568);
+  display: flex;  
+  padding-top: 10px;  
+  font-family: sans-serif;  
+  color: white;
+  justify-content: space-between;
+}
+.Navbar__Link {  
+  padding-right: 8px;
+  color: white;
+}
+
+.Navbar__Items {  
+  display: flex;
+}
+.Navbar__Items--right {  
+  margin-left:auto;
+}
+.float-right{
+  float:right
+}
+.Navbar__Link-toggle {  
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {  
+  .Navbar__Items,  .Navbar {    
+    flex-direction: column;  
+  }
+
+.Navbar__Items {      
+  display:none;  
+}
+
+.Navbar__Items--right {    
+  margin-left:0;  
+}
+
+.Navbar__ToggleShow {    
+  display: flex;  
+}
+
+.Navbar__Link-toggle {    
+  align-self: flex-end;    
+  display: initial;    
+  position: absolute;    
+  cursor: pointer;   
+} 
+}
+
+.input {
+  border: none;
+  
+  padding-top: 20px;
+}
+.input input{
+  border-radius: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+padding:10px;
+}
+.input button {
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+}
+.description {
+  display: flex;
+  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+  padding: 10px;
+}

@@ -126,7 +126,7 @@ class Login extends Component {
                     <div className="row">
                         <div className="col-md-12 form-group">
                             <div className="or-box">
-                                <span class="or">OR</span>
+                                <span className="or">OR</span>
                             </div>
                             <button onClick={this.facebookLogin} className="btn btn-block btn-primary mb-3" type="button"><span><i className="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
                             <button onClick={this.googleLogin} className="btn btn-block btn-danger" type="button"><span><i className="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>

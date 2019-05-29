@@ -3,6 +3,8 @@ import Axios from 'axios'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
 import Navbar from './Navbar';
+import Description from './Description';
+import Footer from './Footer'
 // import auth0Client from '../Auth';
 
 
@@ -20,10 +22,6 @@ class Flights extends Component {
       outboundPartialDate: '',
       inboundPartialDate: ''
     }
-
-
-   
-
 
   getFlights = (e) => {
     e.preventDefault()
@@ -107,15 +105,17 @@ class Flights extends Component {
     return flights.map((flight, i) => {
       console.log('each', flight);
       
-      return <div>
-        <Link key={i}
+      return <div class='contaner'>
+        <Link class = 'link' key={i}
         to={`/flightdetail/${flight.quote.QuoteId}?date=${flight.date}&to=${flight.flightPlaces.destination}&from=${flight.flightPlaces.origin}&carrier=${flight.carrier.Name}`}>
+      <div></div>
       <div>{flight.quote.QuoteId} 
       - Carrier: {flight.carrier.Name} 
       - Date: {flight.date} 
       {/* - Time: {flight.flightTimes} */}
       - From {flight.flightPlaces.origin} 
       - To {flight.flightPlaces.destination}
+      <div></div>
       </div>
       </Link>
       </div>
@@ -160,9 +160,9 @@ class Flights extends Component {
   
   render() {
     return (
-      <div className="container">
+      <div className="container-2 input">
      
-      <form onSubmit ={this.getFlights}>
+      <form  onSubmit ={this.getFlights}>
         <input type="text" name="originPlace" value="Miami" onChange={this.searchFlights} placeholder="origin....." />                                                                                                                                            
 
         <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
@@ -182,6 +182,8 @@ class Flights extends Component {
         <button type='submit'>Search</button>
         </form>
        {this.showFlights()}
+       <Description/>
+       <Footer/>
       </div>
      
     );

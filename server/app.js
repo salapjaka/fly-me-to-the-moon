@@ -18,7 +18,7 @@ firebase.initializeApp(keys);
 
 
 mongoose
-  .connect('mongodb://localhost/firebase-starter', { useNewUrlParser: true })
+  .connect('mongodb://localhost/fly-me-to-the-moon', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
