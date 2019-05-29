@@ -60,10 +60,25 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static(path.join(__dirname, '../client/build')))
+
+// For any routes that starts with "/api", catch 404 and forward to error handler
+// app.use('/*', (req, res, next) => {
+//   let err = new Error('Not Found')
+//   err.status = 404
+//   next(err)
+// })
+
+// For any other routes, redirect to the index.html file of React
+app.get('*', (req, res) => {
+  console.log('__dirname',__dirname)
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
 
 
 // default value for title local
-app.locals.title = 'Fly react';
+app.locals.title = 'Airly';
 
 
 

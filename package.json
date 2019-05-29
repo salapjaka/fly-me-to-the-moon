@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "scripts": {
-    "server": "npm run start --prefix server",
-    "client": "npm run start --prefix client",
+    "preinstall": "echo --- preinstall --- && cd server && npm install && cd ../client && npm install && npm run build && cd ..",
+    "start": "echo --- start --- && cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
+
   },
   "author": "",
   "license": "ISC",
