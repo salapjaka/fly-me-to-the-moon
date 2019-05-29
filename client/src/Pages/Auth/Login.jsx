@@ -27,6 +27,18 @@ class Login extends Component {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((u) => {
                 console.log(u);
+                console.log(this)
+                //debugger
+               if(this.props.location.state)
+                {
+                    window.setTimeout(() => this.props.history.push(this.props.location.state.prevPath),0)
+                } else {
+                    this.props.history.push('/')
+
+                }
+ 
+
+                //BUG
                 axios.post("http://localhost:5000/login").then(res => {
                     console.log("asdasdsadsad", res.data);
                 })

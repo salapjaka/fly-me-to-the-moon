@@ -52,7 +52,7 @@ class App extends Component {
             <div>
                         {/* <Navbar user={this.state.user}/> */}
                         <Switch>
-                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/login" component={ (props) => <Login {...props} />} />
                             <Route exact path="/signup" component={Signup} />
                             <Route exact path="/" component={ (props) => <Flights {...props} user={this.state.user} /> } />
                             <Route exact path="/flightdetail/:id" component={ (props) => <FlightDetail {...props} user={this.state.user} />} />

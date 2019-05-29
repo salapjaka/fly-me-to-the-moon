@@ -77,7 +77,7 @@ class FlightDetail extends Component {
           </div>
 
           :
-          <Redirect to='/login' />
+          <Redirect to={{pathname: '/login', state: { prevPath: window.location.pathname + window.location.search }}}/>
           //http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
       }
     </Fragment>
