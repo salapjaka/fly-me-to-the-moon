@@ -13,3 +13,6 @@ export default firebase.initializeApp({
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 export const facebookProvider = new firebase.auth.FacebookAuthProvider();
+
+const baseURL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api';
+export {baseURL}

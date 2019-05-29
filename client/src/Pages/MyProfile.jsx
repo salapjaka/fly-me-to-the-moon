@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import Axios from 'axios'
 import { Redirect, Link} from 'react-router-dom'
-
+import { baseURL } from '../config/Fire'
 
 class MyProfile extends Component {
   componentDidMount(){
     console.log(this.props.uid)
     let uid = this.props.uid;
-    Axios.get(`http://localhost:5000/allMyStuff/${uid}`).then(stuff=>{
+    Axios.get(`${baseURL}/allMyStuff/${uid}`).then(stuff=>{
       console.log('MyProfile', stuff)
     })
   }

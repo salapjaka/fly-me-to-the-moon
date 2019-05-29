@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import moment from 'moment'
-
+import { baseURL } from '../config/Fire'
 class Profile extends Component {
 
   state = {
@@ -12,7 +12,7 @@ class Profile extends Component {
 
   componentDidMount() {
     console.log('hehehehey', this.props.match.params.uid)
-    Axios.get(`http://localhost:5000/profile/${this.props.match.params.uid}`)
+    Axios.get(`${baseURL}/profile/${this.props.match.params.uid}`)
       .then(profileFromServer => {
         console.log('profile', profileFromServer)
         let flightData = this.queryfie(this.props.location.search)
@@ -36,7 +36,7 @@ class Profile extends Component {
 
   savePackage = (e) => {
     e.preventDefault()
-    Axios.post(`http://localhost:5000/profile`, this.state)
+    Axios.post(`${baseURL}/profile`, this.state)
       .then(res => {
         console.log(res)
         // this.setState({

@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import fire from 'firebase'
-
+import { baseURL } from '../config/Fire'
 class Navbar extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/')
+        axios.get(`${baseURL}`)
             .then((u) => {
                 console.log(u.data)
             })

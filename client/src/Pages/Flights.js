@@ -24,10 +24,10 @@ class Flights extends Component {
       inboundPartialDate: ''
     }
     componentDidMount() {
-      axios.get('http://localhost:5000/')
-          .then((u) => {
-              console.log(u.data)
-          })
+      // axios.get('http://localhost:5000/')
+      //     .then((u) => {
+      //         console.log(u.data)
+      //     })
   }
   logout = () => {
       fire.auth().signOut()

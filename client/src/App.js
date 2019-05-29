@@ -14,7 +14,11 @@ import axios from 'axios';
 import Flights from './Pages/Flights';
 import FlightDetail from './Pages/FlightDetail';
 import MyProfile from './Pages/MyProfile'
+import { baseURL } from './config/Fire'
+
 import './App.css'
+
+console.log('the base url is', baseURL)
 
 class App extends Component {
     state = {
@@ -31,7 +35,7 @@ class App extends Component {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setState({ user }, () => {
-                    axios.post('http://localhost:5000/api/newUser', {
+                    axios.post(`${baseURL}/newUser`, {
                         email: this.state.user.email,
                         uid: this.state.user.uid
                     }).then((res) => {
