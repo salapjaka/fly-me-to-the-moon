@@ -12,12 +12,10 @@ const path = require('path');
 const firebase = require('firebase')
 const keys = require('./config/keys')
 
-
 firebase.initializeApp(keys);
-
-
+console.log(process.env.MONGODB_URI, 343)
 mongoose
-  .connect('mongodb://localhost/fly-me-to-the-moon', { useNewUrlParser: true })
+  .connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
