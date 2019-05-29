@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
+import Navbar from '../Pages/Navbar'
 
 class FlightDetail extends Component {
 
@@ -64,7 +65,7 @@ class FlightDetail extends Component {
 
     return (
       <Fragment>
-      
+      <Navbar user={this.state.user}/>
         {this.props.user ?
 
           <div>
@@ -77,6 +78,7 @@ class FlightDetail extends Component {
 
           :
           <Redirect to='/login' />
+          //http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
       }
     </Fragment>
     );

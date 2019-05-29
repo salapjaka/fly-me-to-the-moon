@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import Description from './Description';
 import Footer from './Footer'
 // import auth0Client from '../Auth';
-
+import axios from 'axios'
+import fire from 'firebase'
 
 var t;
 
@@ -22,6 +23,19 @@ class Flights extends Component {
       outboundPartialDate: '',
       inboundPartialDate: ''
     }
+    componentDidMount() {
+      axios.get('http://localhost:5000/')
+          .then((u) => {
+              console.log(u.data)
+          })
+  }
+  logout = () => {
+      fire.auth().signOut()
+  }
+  classToggle=() =>{  
+      const navs = document.querySelectorAll('.Navbar__Items')    
+      navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+  }
 
   getFlights = (e) => {
     e.preventDefault()
@@ -105,17 +119,20 @@ class Flights extends Component {
     return flights.map((flight, i) => {
       console.log('each', flight);
       
-      return <div class='contaner'>
+      return <div class='container'>
         <Link class = 'link' key={i}
         to={`/flightdetail/${flight.quote.QuoteId}?date=${flight.date}&to=${flight.flightPlaces.destination}&from=${flight.flightPlaces.origin}&carrier=${flight.carrier.Name}`}>
-      <div></div>
-      <div>{flight.quote.QuoteId} 
-      - Carrier: {flight.carrier.Name} 
-      - Date: {flight.date} 
-      {/* - Time: {flight.flightTimes} */}
-      - From {flight.flightPlaces.origin} 
-      - To {flight.flightPlaces.destination}
-      <div></div>
+      
+      <div className='list-flights'>
+      <div><h7 class="blue">{flight.quote.QuoteId}</h7>. {flight.carrier.Name} </div>
+      <div>{flight.date.slice(0, 10)} at 2:55pm (EST)</div>
+      {/* <div>Time: {flight.flightTimes}</div> */}
+      {/* <div>Time: 2:55pm</div> */}
+      <div><img class="middle-column" width='30px' src='./images/plane.png' alt='plane'></img></div>
+      <div>
+      {flight.flightPlaces.origin} to {flight.flightPlaces.destination}</div>
+      {/* <div></div> */}
+      
       </div>
       </Link>
       </div>
@@ -160,32 +177,64 @@ class Flights extends Component {
   
   render() {
     return (
+      <div>
+      <div class='background'>
+    
+        <div class="top-bar">
+          <h4 class="airly">Airly</h4>
+          
+          {this.props.user ?
+                 <Link className="signup-login" to='./' onClick={this.logout}>LOGOUT</Link>
+                 :
+                 <Fragment>
+                    <div className = "signup-login">
+                     <Link to='/signup'>SIGN UP</Link>
+                     <Link to='/login'>LOG IN</Link>
+                     </div>
+                 </Fragment>
+             }  
+            
+          <p class="moto">Get your package early</p>
+        </div>
+      </div>
       <div className="container-2 input">
-     
+      
+      
       <form  onSubmit ={this.getFlights}>
         <input type="text" name="originPlace" value="Miami" onChange={this.searchFlights} placeholder="origin....." />                                                                                                                                            
 
         <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
         <br></br>
-        Origin: {this.state.originPlace} 
-        <br></br>
-        Destination: {this.state.destinationPlace}
+        {/* <div class='flight-result-title'>Results from : <h7 class="blue">{this.state.originPlace}</h7> To: <h7 class="blue">{this.state.destinationPlace}</h7></div> */}
         <br></br>
         
         <input type="date" name="outboundPartialDate" onChange={this.handleDates} />                                                                                                                                            
         <input type="date" name="inboundPartialDate" onChange={this.handleDates} />                                                                                                                                            
         <br></br>
-        From: {this.state.outboundPartialDate}
+        {/* From: {this.state.outboundPartialDate}
         <br></br>
-        To: {this.state.inboundPartialDate}
+        To: {this.state.inboundPartialDate} */}
         <br></br>
         <button type='submit'>Search</button>
         </form>
+
+        <div class='container'>
+          <div class = 'link'>
+            <div className='list-flights'>
+                  <div className = "align-left titles">Airline</div>
+                  <div className = "titles"> Date and Time</div>
+                  {/* <div>Time: {flight.flightTimes}</div> */}
+                  <div></div> 
+                  <div className = "titles">Destination </div>
+            </div>
+          </div>
+        </div>
+
        {this.showFlights()}
        <Description/>
        <Footer/>
       </div>
-     
+     </div>
     );
   }
 }

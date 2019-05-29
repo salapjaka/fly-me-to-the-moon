@@ -4,7 +4,7 @@ class Description extends Component {
   render() {
     return (
       <div>
-        <h2>What is Airly</h2>
+        <h2 className='description-title'>WHAT IS AIRLY?</h2>
         
         <div class='description'>
           <div>There is a reason Airly is trusted by over a million passengers and shippers weekly. 

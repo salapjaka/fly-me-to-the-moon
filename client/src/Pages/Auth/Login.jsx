@@ -13,12 +13,12 @@ class Login extends Component {
     }
 
     componentDidMount() {
+        console.log(this)
         axios.post('http://localhost:5000/login')
             .then((u) => {
                 console.log(u.data)
             })
     }
-
 
 
     //Firebase Sign In
@@ -92,11 +92,11 @@ class Login extends Component {
     }
 
 
-
+//http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
     render() {
         return (
             <Fragment>
-                {this.state.loggedIn ? <Redirect to="/" /> : false}
+                {/* {this.state.loggedIn ? <Redirect to="/" /> : false} */}
                 <div className="simple-login-container">
                     <div className="row">
                         <div className="col-md-12 text-center">

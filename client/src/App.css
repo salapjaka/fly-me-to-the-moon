@@ -1,8 +1,80 @@
 body {
   background-color: white;
-  font-family: 'Lato', sans-serif;
+  font-family: "SF Pro Text";
 
 }
+
+.background {
+  height: 600px;
+  width: 100%;
+  background-image: url("/images/background.jpg");
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center; 
+  /* display: flex; */
+} 
+.airly {
+  /* font-family: 'Yesteryear', cursive, thin; */
+  /* text-shadow: 5px 10px 2px rgba(0,0,0,.9); */
+  /* font-size: 80px; */
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8); 
+  position: absolute;
+  top: 2vh;
+  left: 5vw;
+  /* transform: translate(-50%, -50%); */
+  height: 74px;	
+  width: 94px;	
+  color: #FFFFFF;	
+  font-family: Yesteryear;	
+  font-size: 50px;	
+  letter-spacing: 0.83px;	
+  line-height: 74px;
+}
+
+.moto{
+  font-family: 'Lato', sans-serif; 
+  color: white;    
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8);        
+  position: absolute;    
+  top: 50%;    
+  left: 50%;    
+  transform: translate(-50%, -50%);
+  height: 60px;
+  color: #FFFFFF;
+  font-family: "SF Pro Text";
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 0.83px;
+  line-height: 60px;
+}
+
+/* .sign-up {	
+  height: 18px;	
+  color: #FFFFFF;	
+  font-family: "SF Pro Text";	
+  font-size: 15px;	
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+  position: absolute; 
+  top: 12%;    
+  left: 85%;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8);  
+} */
+/* .log-in {	
+  height: 18px;	
+  	
+  color: #FFFFFF;	
+  font-family: "SF Pro Text";	
+  font-size: 15px;	
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+  position: absolute; 
+  top: 12%;    
+  left: 92%;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8);  
+} */
 .link {
   color: black;
   display: flex;
@@ -11,6 +83,24 @@ body {
   flex-direction: column;
   padding: 5px;
   white-space: nowrap;
+}
+
+.flight-result-title {
+  height: 24px;		
+  color: #000000;	
+  font-family: "SF Pro Text";	
+  font-size: 20px;	
+  font-weight: bold;	
+  letter-spacing: 0.33px;	
+  line-height: 24px;
+  position: flex;
+}
+.list-flights {
+display: flex;
+justify-content: space-between;
+width: 90%;
+font-size: 1em;
+/* text-align: right; */
 }
 /* .link {
   width: 50%;
@@ -35,20 +125,52 @@ a:hover {
   text-align: center;
   /* color: white; */
 }
-.logo{
-  font-family: 'Yesteryear', cursive, thin;
-  text-align: center;
-  font-size: 3em;
+.container-3 {
+position: relative;
+text-align: center;
+color:white;
 }
-.moto{
-  font-family: 'Lato', sans-serif;
+.plane {
+  text-align: center;
+}
+
+.blue {
+  color:rgb(46,141,255);
+  font-weight: bold;
+}
+.middle-column {
+  position: relative;
+  left: 12vw;
+}
+.footer {
+  background-color: #2EC1FF;
+  height: 50px;
+  width: 100%;
+}
+.footer-text {
+  height: 12px;	
+  color: #FFFFFF;	
+  font-size: 10px;	
+  letter-spacing: 0.17px;	
+  line-height: 12px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  font-weight: bold;
+}
+.description-title {
+  font-family: "SF Pro Text";
+  font-size: 20px;	
+  font-weight: bold;	
+  letter-spacing: 0.33px;	
+  line-height: 24px;
 }
 /* .my-nav {
   display: flexbox;
 } */
 
-.Navbar {  
-  /* background-color: rgba(42, 42, 182, 0.466);   */
+/* .Navbar {  
+ 
   background-color: rgba(20, 56, 85, 0.568);
   display: flex;  
   padding-top: 10px;  
@@ -72,9 +194,9 @@ a:hover {
 }
 .Navbar__Link-toggle {  
   display: none;
-}
+} */
 
-@media only screen and (max-width: 768px) {  
+/* @media only screen and (max-width: 768px) {  
   .Navbar__Items,  .Navbar {    
     flex-direction: column;  
   }
@@ -97,7 +219,7 @@ a:hover {
   position: absolute;    
   cursor: pointer;   
 } 
-}
+} */
 
 .input {
   border: none;
@@ -108,7 +230,8 @@ a:hover {
   border-radius: 4px;
   border: none;
   border-bottom: 1px solid rgba(20, 56, 85, 0.568);
-padding:10px;
+  padding:10px;
+  text-align: center;
 }
 .input button {
   border-radius: 4px;
@@ -119,3 +242,94 @@ padding:10px;
   border-bottom: 1px solid rgba(20, 56, 85, 0.568);
   padding: 10px;
 }
+
+.signup-login {
+  width: 160px;
+  display: inline-flex;
+  float: right;
+  /* left: 57vw; */
+  position: relative;
+  top: 6vh;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8);
+  height: 18px;	
+  font-family: "SF Pro Text";	
+  font-size: 14px;	
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+}
+
+.signup-login a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  
+}
+
+.list-flights div {
+  width: 0vw; /*  aligns to the left */
+  text-align: left;
+  
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+}
+
+.titles{
+  	
+  color: #868686;	
+  font-family: "SF Pro Text";	
+  font-size: 0.8em;	
+  font-weight: 500;	
+ 
+}
+/* .flight-table {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  color: black;
+max-width: 700px;
+  flex-direction: column;
+  padding: 5px;
+  white-space: nowrap;
+}
+.flight-table div {
+  width: 30vw; /*  aligns to the left */
+  /* text-align: left; */
+/* } */ 
+/* .flight-table div {
+  display: inline-flex;
+  width: 30vw;
+} */ 
+
+/* .move-right {
+  position: relative;
+  left: 12vw;
+}
+
+.middle-column {
+  position: relative;
+  left: 3.5vw;
+}
+
+.first-column {
+  position: relative;
+  right: 5vw;
+} */
+
+ /* |--><Main /> page
+      |-->Signup />(gives a pop-up to login or signup and redirects to the Main)
+      |-->Login /> (gives a pop-up to login or signup and redirects back to the Main)
+      /* |-->There is also a logout button that appears if you are logged in */
+      /* |--> <Flights />(when you search for flights - the list of flights appear on the same Main page)
+      |--> <ProfileShipper/> page of the shipper(I have not decided where to put a link to it yet, 
+          but it will show like a list of his shipments in transit or planned)
+          |---><FlightDetails />(shows the information about the flight and a list of   
+            people registered for that flight)
+            /* --it has a button to register yourself on this flight to be a carrier yourself  */
+                  /* |----><ProfileCarrier /> page of an individual registered for the flight (this profile page of an individual 
+                  person registered for the flight where there is an input form for the shipper to request 
+                  a package to be sent by them)
+            
+                /* --- */ 

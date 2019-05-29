@@ -26,43 +26,24 @@ class Navbar extends Component {
 
     render() {
         return (
-          <div>  
-    <div class="Navbar">   
-         <div class="Navbar__Link Navbar__Link-brand">      
-                <a href='/'><img width='150px' src="/images/logo-white.png" alt='logo'></img></a> 
-         </div>
-         <div class="Navbar__Link Navbar__Link-toggle">      
-             <i class="fas fa-bars"></i>    
-         </div>  
-         <nav class="Navbar__Items">    
-             <div class="Navbar__Link">      
-             <h4 className="logo" >Airly</h4> 
-             {/* <p className='moto'>arrives early</p> */}
-             </div>    
-             </nav>
-         
-    <nav>    
-         <div className="Navbar__Items Navbar__Items--right">      
-         {this.props.user ?
-                        <Link className='Navbar__Link'to='/' onClick={this.logout}>LOGOUT</Link>
-                        :
-                        <Fragment>
-                            <div><Link className="Navbar__Link" to='/signup'>SIGN UP</Link></div>
-                            <div><Link className="Navbar__Link" to='/login'>LOG IN</Link></div>
-                        </Fragment>
-                    }  
-         </div>    
-         
-    </nav>
-   
-</div>
-</div>
+        <div>  
+             {this.props.user ?
+                 <Link to='./' onClick={this.logout}>LOGOUT</Link>
+                 :
+                 <Fragment>
+                     <div><Link  to='/signup'>SIGN UP</Link></div>
+                     <div><Link  to='/login'>LOG IN</Link></div>
+                 </Fragment>
+             }  
+        </div>    
     
         );
     }
 }
 
 export default Navbar;
+
+
 // {/* <div class="Navbar">   
 //          <div class="Navbar__Link Navbar__Link-brand">      
 //              Website title    
