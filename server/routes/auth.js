@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require("../models/User");
 
+
 router.post("/api/newUser", (req, res, next) => {
   let { email, uid } = req.body;
 
