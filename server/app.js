@@ -50,6 +50,8 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+app.use(express.static(path.join(__dirname, '../client/build')))
+
 
 // CORS
 app.use(function (req, res, next) {
@@ -65,7 +67,7 @@ app.use(function (req, res, next) {
 
 
 // default value for title local
-app.locals.title = 'Fly react';
+app.locals.title = 'Fly me to the moon';
 
 
 
