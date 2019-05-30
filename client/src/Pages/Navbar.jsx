@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import fire from 'firebase'
 
-class LandingPage extends Component {
+class Navbar extends Component {
 
 
     componentDidMount() {
@@ -20,14 +20,19 @@ class LandingPage extends Component {
     render() {
         return (
             <Fragment>
-                <div>
+                <div className = 'nav-new'>
                     {this.props.user ?
-                        <Link onClick={this.logout}>Logout</Link>
-                        :
                         <Fragment>
-                            <Link to='/signup'>SIGN UP</Link>
-                            <Link to='/login'>LOG IN</Link>
+                            <Link class='airly'to="/">Airly</Link>
+
+                            <Link to="/myProfile">Hello {this.props.user.email}</Link>
+                            <Link className="signup-logins" onClick={this.logout}>Logout</Link>
                         </Fragment>
+                        :
+                        <div className="signup-logins">
+                            <Link class = 'signup-login' to='/signup'>SIGN UP</Link>
+                            <Link to='/login'>LOG IN</Link>
+                        </div >
                     }
 
                 </div>
@@ -36,4 +41,4 @@ class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+export default Navbar;

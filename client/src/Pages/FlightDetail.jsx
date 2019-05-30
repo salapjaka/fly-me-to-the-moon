@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class FlightDetail extends Component {
 

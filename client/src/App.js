@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 // import ReactLoading from "react-loading";
 import Profile from './Pages/Profile'

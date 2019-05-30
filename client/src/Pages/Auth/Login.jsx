@@ -97,47 +97,42 @@ class Login extends Component {
         return (
             <Fragment>
                 {this.state.loggedIn ? <Redirect to="/" /> : false}
-                <div className="simple-login-container">
-                    <div className="row">
-                        <div className="col-md-12 text-center">
+                <div class="container container-login">
+                    <div class="logo"></div>
+                            <div class="login-item">
+                      <form action="" method="post" class="form form-login">
+                        <div class="form-field">
+
+                          <input value={this.state.email} onChange={this.handleChange} type="text" name="email" class="form-input" placeholder='Email'></input>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 text-center text-secondary">
-                            <h2>Sign In</h2>
+
+                        <div class="form-field">
+                          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+
+                          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" placeholder="Password"id="login-password"  class="form-input" placeholder="Password" required></input>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 form-group">
-                            <input value={this.state.email} onChange={this.handleChange} className="form-control" type="email" name="email" placeholder="Enter Email" />
+
+                        <div class="form-field">
+                        <input onClick={this.login} type="submit" value="Log in" ></input>
+                        {this.state.message}  
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 form-group">
-                            <input value={this.state.password} onChange={this.handleChange} className="form-control" type="password" name="password" placeholder="Password" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 form-group">
-                            <input onClick={this.login} type="submit" className="btn btn-block btn-login" />
-                            {this.state.message}
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 form-group">
                             <div className="or-box">
-                                <span class="or">OR</span>
+                                <span className="or">OR</span>
                             </div>
-                            <button onClick={this.facebookLogin} className="btn btn-block btn-primary mb-3" type="button"><span><i className="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-                            <button onClick={this.googleLogin} className="btn btn-block btn-danger" type="button"><span><i className="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+                        <div class="form-field">
+                          <input onClick={this.facebookLogin}  className='facebook' type="button" value="Continue with Facebook"></input>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12 form-group text-center">
-                            <div className="or-box">
-                                <span><Link to="/signup">Sign up now!</Link></span>
+                        <div class="form-field">
+                          <input onClick={this.googleLogin} className="google" type="button" value="Continue with Google+"></input>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12 form-group text-center">
+                                <div className="or-box">
+                                    <span><Link to="/signup">Sign up now!</Link></span>
+                                </div>
                             </div>
                         </div>
+                      </form>
                     </div>
                 </div>
             </Fragment>
