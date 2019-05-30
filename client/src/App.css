@@ -58,6 +58,7 @@ display:flex;
 
 }
 .facebook {
+ 
   background-color: #3b5998;
 }
 
@@ -178,75 +179,20 @@ color:white;
   letter-spacing: 0.33px;	
   line-height: 24px;
 }
-/* .my-nav {
-  display: flexbox;
-} */
 
-/* .Navbar {  
- 
-  background-color: rgba(20, 56, 85, 0.568);
-  display: flex;  
-  padding-top: 10px;  
-  font-family: sans-serif;  
-  color: white;
-  justify-content: space-between;
-}
-.Navbar__Link {  
-  padding-right: 8px;
-  color: white;
-}
-
-.Navbar__Items {  
-  display: flex;
-}
-.Navbar__Items--right {  
-  margin-left:auto;
-}
-.float-right{
-  float:right
-}
-.Navbar__Link-toggle {  
-  display: none;
-} */
-
-/* @media only screen and (max-width: 768px) {  
-  .Navbar__Items,  .Navbar {    
-    flex-direction: column;  
-  }
-
-.Navbar__Items {      
-  display:none;  
-}
-
-.Navbar__Items--right {    
-  margin-left:0;  
-}
-
-.Navbar__ToggleShow {    
-  display: flex;  
-}
-
-.Navbar__Link-toggle {    
-  align-self: flex-end;    
-  display: initial;    
-  position: absolute;    
-  cursor: pointer;   
-} 
-} */
-
-.input {
+.input-main {
   border: none;
   
   padding-top: 20px;
 }
-.input input{
+.input-main input{
   border-radius: 4px;
   border: none;
   border-bottom: 1px solid rgba(20, 56, 85, 0.568);
   padding:10px;
   text-align: center;
 }
-.input button {
+.input-main button {
   border-radius: 4px;
   border-bottom: 1px solid rgba(20, 56, 85, 0.568);
 }
@@ -290,29 +236,24 @@ color:white;
 }
 
 .titles{
-  	
   color: #868686;	
   font-family: "SF Pro Text";	
   font-size: 0.8em;	
   font-weight: 500;	
- 
 }
 
 
 /* login page css*/
-
-  
   .container-login {
-    background:white;
+    /* background:white; */
     /* border-radius: 5px; */
-    /* box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1); */
-    width: 450px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    /* width: 450px; */
     display: flex;  
     flex-direction: column;
-    
+    padding-top: 50px;
+
   }
-  
- 
   
   .login-item {
     color: #ffff;
@@ -320,56 +261,91 @@ color:white;
     margin: 20px 20px 0;	
     border-radius: 3px;
   }
-  
-  /* input {
-    
-    color: inherit;
-    font: inherit;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
-    /* border-bottom: 1px solid rgba(20, 56, 85, 0.568); */
-  /* } */ 
-  
-  /* .user:before {
-    content: '\f007';
-    font: 14px fontawesome;
-    color: #5b5b5b;
-  } */
-  
-  /* .lock:before {
-    content: '\f023';
-    font: 14px fontawesome;
-    color: #5b5b5b;
-  } */
-  
+
+  .taking-flight {
+    background-color: #ff702d;
+    color: #eee;
+    font-weight: bold;
+    height:3em;
+    font-size: 15px;
+    border: none;
+    width: 280px; 
+  }
+  .taking-flight:hover {
+    background-color: rgba(134, 145, 155, 0.568);
+  }
+.button-taking-flight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .flight-detail-flex {
+    display: flex;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    /* width: 450px; */
+    flex-direction: column;
+  }
+.passenger-list {
+  height: 18px;	
+  color: #000000;	
+  font-family: "SF Pro Text";	
+  font-size: 15px;	
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+  /* border: none; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.passenger-list:hover {
+  background-color: rgba(134, 145, 155, 0.568);
+
+}
+.passenger-list-title {
+  height: 18px;	
+  color: #000000;	
+  font-family: "SF Pro Text";	
+  font-size: 15px;	
+  font-weight: bold;	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+  border: none;
+  padding: 1em 3em;
+}
+
+.flight-details-title {
+  height: auto;	
+  /* color: #2DC2FF;	 */
+  font-family: "SF Pro Text";	
+  font-size: 20px;	
+  font-weight: bold;	
+  letter-spacing: 0.33px;	
+  line-height: 24px;
+  text-align: center;
+width: 600px;
+padding: 1em;
+}
+
+
   .form input {
     width: 100%;
   }
-  
-  /* .form-login label,
-  .form-login input[type="text"],
-  .form-login input[type="password"],
-  .form-login input[type="submit"] {
-    border-radius: 0.25rem;
-    padding: 1rem; */
-    /* color: #3A3F44;   */
-  /* } */
-  
-  /* .form-login label {
-    background-color: #222222;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  } */
-  
-  .form-login input[type="text"], .form-login input[type="password"] {
+   
+  .form-login input[type="text"], 
+  .form-login input[type="password"] {
     background-color: #ffffff;
    
   }
+  .form-login input[type="button"] {
+      background-color: #3b5998; 
+      /* background-image: url("/images/facebook.jpeg"); */
+      /* padding-left: 30px; */
+  }
+  .form-login input[class="google"] {
+    background-color: #176bef; 
+}
   .form-login input:hover {
     background-color: #eeeeee;
     border-bottom: 1px rgb(46,141,255);

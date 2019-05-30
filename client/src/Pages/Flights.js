@@ -197,7 +197,7 @@ class Flights extends Component {
           <p class="moto">Get your package early</p>
         </div>
       </div>
-      <div className="container-2 input">
+      <div className="container-2 input-main">
       
       
       <form  onSubmit ={this.getFlights}>

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Navbar from '../Pages/Navbar'
 import { baseURL } from '../config/Fire'
 
@@ -8,9 +8,9 @@ class FlightDetail extends Component {
 
   state = {
     passengers: [
-      { 'name': 'chris' },
-      { 'name': 'niko' },
-      { 'name': 'parker' }
+      // { 'name': 'chris' },
+      // { 'name': 'niko' },
+      // { 'name': 'parker' }
     ]
   }
   queryfie(string) {
@@ -44,7 +44,8 @@ class FlightDetail extends Component {
 
   showPassengers = () => {
     return this.state.passengers.map((passenger,i) => {
-      return <div key={i}><button  onClick = {()=>{this.pickPassenger(passenger.uid)}}>{passenger.email}</button>
+      return <div key={i}><button  class ='passenger-list' onClick = {()=>
+      {this.pickPassenger(passenger.uid)}}>{passenger.email}</button>
       </div>
       
       // <button onClick={() => { this.pickPassenger(passenger.name) }}>{passenger.name}</button>
@@ -65,23 +66,29 @@ class FlightDetail extends Component {
   render() {
 
     return (
+<div>
+        <div class='navbar-login'>
+              <h4 class="airly">Airly</h4>
+        </div>
+        <div className = 'login-background'>
+            <Link className = 'signup-login' to='/'>BACK</Link>
+         </div>
+ <div class='button-taking-flight'><h3 class="flight-details-title">FLIGHT DETAILS for 'color #2DC2FF airline' from '#2DC2FF origin' to '#2DC2FF destination' on this '#2DC2FF date' at this '#2DC2FF time' </h3></div>
+    <div className='flight-detail-flex'>
       <Fragment>
-      <Navbar user={this.state.user}/>
         {this.props.user ?
-
           <div>
-            Flight details:
-        <br></br>
-            People registered for this flight: <li>{this.showPassengers()}</li>
-            <br></br>
-            <button onClick={this.imTakingFlight}>I'm taking this flight</button>
+            <div class='button-taking-flight'><button class='taking-flight' onClick={this.imTakingFlight}>I'm taking this flight</button></div>
+            <div class='passenger-list-title'>Users registered for this flight who will be able to carry your package: </div>
+            <div><ol class = 'blue'><li>{this.showPassengers()}</li></ol></div>
           </div>
-
           :
           <Redirect to={{pathname: '/login', state: { prevPath: window.location.pathname + window.location.search }}}/>
           //http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
       }
     </Fragment>
+    </div>
+</div>
     );
   }
 }

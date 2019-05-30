@@ -80,7 +80,74 @@ class Signup extends Component {
 
     render() {
         return (
+            <div>
+            <div class='navbar-login'><h4 class="airly">Airly</h4></div>
+            <div className = 'login-background'>
             <Fragment>
+
+
+            {this.state.signedUp ? <Redirect to="/" /> : false}
+                <div class="container container-login">
+                    <div class="logo"></div>
+                            <div class="login-item">
+                      <form action="" method="post" class="form form-login">
+                        <div class="form-field">
+                          <input value={this.state.email} onChange={this.handleChange} type="text" name="email" className="form-input" placeholder='Email'></input>
+                        </div>
+
+                        <div class="form-field">
+                          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+                          <input value={this.state.password} onChange={this.handleChange} type="password" name="password"  class="form-input" placeholder="Password"></input>
+                        </div>
+
+                        <div class="form-field">
+                          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+                          <input value={this.state.confirmPassword} onChange={this.handleChange} type="password" name="confirmPassword"   class="form-input" placeholder="Verify password"></input>
+                        </div>
+
+                        <div class="form-field">
+                        <input onClick={this.signup} type="submit" ></input>
+                        {this.state.message}  
+
+                         {/* <input onClick={this.signup} type="submit" className="btn btn-block btn-login" placeholder="Enter your Password" />
+                            {this.state.message} */}
+                        </div>
+
+                        
+                            <div className="or-box">
+                                <span className="or">OR</span>
+                            </div>
+                        <div class="form-field">
+                          <input onClick={this.facebookLogin}  className='facebook' type="button" value="Continue with Facebook"></input>
+                        </div>
+                        <div class="form-field">
+                          <input onClick={this.googleLogin} className="google" type="button" value="Continue with Google+"></input>
+                        </div>
+                        {/* <div className="row">
+                            <div className="col-md-12 form-group text-center">
+                                <div className="or-box">
+                                    <span><Link to="/signup">Sign up now!</Link></span>
+                                </div>
+                            </div>
+                        </div> */}
+                        <div className="row">
+                            <div className="col-md-12 form-group text-center">
+                             <div className="or-box">
+                                <span><Link to="/login">Sign in now!</Link></span>
+                            </div>
+                        </div>
+                    </div>
+                      </form>
+                    </div>
+                </div> 
+
+{/* 
+
+
+
+
+
+
                 {this.state.signedUp ? <Redirect to="/" /> : false}
                 <div className="simple-login-container">
                     <div className="row">
@@ -129,8 +196,11 @@ class Signup extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </Fragment>
+
+            </div>
+            </div> 
         );
     }
 }

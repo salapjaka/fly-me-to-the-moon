@@ -133,7 +133,9 @@ class Login extends Component {
                         <input onClick={this.login} type="submit" value="Log in" ></input>
                         {this.state.message}  
                         </div>
-
+                            <div className="or-box">
+                                <span className="or">OR</span>
+                            </div>
                         <div class="form-field">
                           <input onClick={this.facebookLogin}  className='facebook' type="button" value="Continue with Facebook"></input>
                         </div>
