@@ -12,12 +12,10 @@ const path = require('path');
 const firebase = require('firebase')
 const keys = require('./config/keys')
 
-
 firebase.initializeApp(keys);
-
-
+console.log(process.env.MONGODB_URI, 343)
 mongoose
-  .connect('mongodb://localhost/firebase-starter', { useNewUrlParser: true })
+  .connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -50,8 +48,6 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-app.use(express.static(path.join(__dirname, '../client/build')))
-
 
 // CORS
 app.use(function (req, res, next) {
@@ -64,18 +60,33 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static(path.join(__dirname, '../client/build')))
+
+// For any routes that starts with "/api", catch 404 and forward to error handler
+// app.use('/*', (req, res, next) => {
+//   let err = new Error('Not Found')
+//   err.status = 404
+//   next(err)
+// })
+
+// For any other routes, redirect to the index.html file of React
+// app.get('*', (req, res) => {
+//   console.log('__dirname',__dirname)
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'))
+// })
+
 
 
 // default value for title local
-app.locals.title = 'Fly me to the moon';
+app.locals.title = 'Airly';
 
 
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/api', index);
 
 const auth = require('./routes/auth');
-app.use('/', auth);
+app.use('/api', auth);
 
 
 module.exports = app;
