@@ -16,7 +16,6 @@ const keys = require('./config/keys')
 firebase.initializeApp(keys);
 
 
-
 mongoose
   .connect('mongodb://localhost/firebase-starter', { useNewUrlParser: true })
   .then(x => {

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
+import { baseURL } from '../config/Fire'
 
 class FlightDetail extends Component {
 
@@ -24,7 +25,7 @@ class FlightDetail extends Component {
     let query = this.queryfie(this.props.location.search);
     console.log(query)
 
-    Axios.get(`http://localhost:5000/flightdetails/${this.props.location.search}`)
+    Axios.get(`${baseURL}/flightdetails/${this.props.location.search}`)
     .then(res => {
       console.log('anything?',res.data)
     
@@ -51,7 +52,7 @@ class FlightDetail extends Component {
 
   imTakingFlight = () => {
     console.log(this.props.user)
-    Axios.post(`http://localhost:5000/flightdetails/${this.props.location.search}`, {email: this.props.user.email, uid:this.props.user.uid }).then(res => {
+    Axios.post(`${baseURL}/flightdetails/${this.props.location.search}`, {email: this.props.user.email, uid:this.props.user.uid }).then(res => {
       console.log(res)
       this.setState({
         passengers:res.data.details.passengers

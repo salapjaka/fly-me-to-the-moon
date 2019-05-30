@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
-
+import { baseURL } from '../config/Fire'
 
 class MyProfile extends Component {
 state = {
@@ -12,7 +12,7 @@ state = {
   componentDidMount(){
     console.log(this.props.uid)
     let uid = this.props.uid;
-    Axios.get(`http://localhost:5000/allMyStuff/${uid}`).then(stuff=>{
+    Axios.get(`${baseURL}/allMyStuff/${uid}`).then(stuff=>{
       console.log('MyProfile', stuff)
       let {myPacks,  packsICarry,  myFlights}  = stuff.data
       this.setState({myFlights, myPacks, packsICarry})

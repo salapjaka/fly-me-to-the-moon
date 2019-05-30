@@ -7,7 +7,7 @@ import Login from './Pages/Auth/Login'
 import Signup from './Pages/Auth/Signup'
 // import Home from './Pages/Home'
 import Navbar from './Pages/Navbar'
-
+import { baseURL } from './config/Fire'
 //Firebase Settings
 import firebase from './config/Fire';
 import axios from 'axios';
@@ -30,7 +30,7 @@ class App extends Component {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setState({ user }, () => {
-                    axios.post('http://localhost:5000/api/newUser', {
+                    axios.post(`${baseURL}/api/newUser`, {
                         email: this.state.user.email,
                         uid: this.state.user.uid
                     }).then((res) => {

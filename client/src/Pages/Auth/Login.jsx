@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import firebase, { googleProvider, facebookProvider } from "../../config/Fire";
 import { Link, Redirect } from 'react-router-dom'
 import axios from "axios";
+import { baseURL } from '../../config/Fire'
+
 
 class Login extends Component {
 
@@ -13,7 +15,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        axios.post('http://localhost:5000/login')
+        axios.post(`${baseURL}/login`)
             .then((u) => {
                 console.log(u.data)
             })
@@ -27,7 +29,7 @@ class Login extends Component {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((u) => {
                 console.log(u);
-                axios.post("http://localhost:5000/login").then(res => {
+                axios.post(`${baseURL}/login`).then(res => {
                     console.log("asdasdsadsad", res.data);
                 })
                     .catch(err => {
@@ -52,7 +54,7 @@ class Login extends Component {
             .then((u) => {
 
                 console.log(u);
-                axios.post("http://localhost:5000/login", { uid: u.uid, email: u.email }).then(res => {
+                axios.post(`${baseURL}/login`, { uid: u.uid, email: u.email }).then(res => {
                     console.log("asdasdsadsad", res);
                 }).catch(err => { console.error(err) })
 
