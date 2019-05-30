@@ -70,10 +70,10 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 // })
 
 // For any other routes, redirect to the index.html file of React
-app.get('*', (req, res) => {
-  console.log('__dirname',__dirname)
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
-})
+// app.get('*', (req, res) => {
+//   console.log('__dirname',__dirname)
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'))
+// })
 
 
 
@@ -83,10 +83,10 @@ app.locals.title = 'Airly';
 
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/api', index);
 
 const auth = require('./routes/auth');
-app.use('/', auth);
+app.use('/api', auth);
 
 
 module.exports = app;

@@ -20,10 +20,12 @@ router.get('/profile/:uid', (req,res,next) => { //Gets the user from the databas
   })
 })
 
-router.get('/flightdetails', (req, res, next) => { //gets the flight from the database 
+router.get('/flightdetails/:quoteNumber', (req, res, next) => { //gets the flight from the database 
   var query = req.query,
     update = { visited: new Date() },
     options = { upsert: true, new: true, setDefaultsOnInsert: true };
+
+    console.log('HIIIIIIIII')
 
   // Find the document
   Flight.findOneAndUpdate(query, update, options, function (error, result) { //if no flight then create one 
@@ -36,7 +38,7 @@ router.get('/flightdetails', (req, res, next) => { //gets the flight from the da
 
 
 router.post('/flightdetails', (req, res, next) => { //Saves a user to the flight 
-  console.log('ininininini',req.body)
+  console.log('why dont i see this???',req.body)
   let pass = req.body
   var query = req.query,
     update = { $addToSet : { passengers: pass } }

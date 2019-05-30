@@ -53,7 +53,7 @@ class FlightDetail extends Component {
 
   imTakingFlight = () => {
     console.log(this.props.user)
-    Axios.post(`${baseURL}/flightdetails/${this.props.location.search}`, {email: this.props.user.email, uid:this.props.user.uid }).then(res => {
+    Axios.post(`${baseURL}/flightdetails${this.props.location.search}`, {email: this.props.user.email, uid:this.props.user.uid }).then(res => {
       console.log(res)
       this.setState({
         passengers:res.data.details.passengers
