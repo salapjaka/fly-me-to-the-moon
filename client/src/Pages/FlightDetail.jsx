@@ -25,7 +25,7 @@ class FlightDetail extends Component {
     let query = this.queryfie(this.props.location.search);
     console.log(query)
 
-    Axios.get(`${baseURL}/flightdetails/${this.props.location.search}`)
+    Axios.get(`${baseURL}/flightdetails${this.props.location.search}`)
     .then(res => {
       console.log('anything?',res.data)
     

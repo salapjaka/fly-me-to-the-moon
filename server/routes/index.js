@@ -20,6 +20,7 @@ router.get('/profile/:uid', (req,res,next) => { //Gets the user from the databas
 })
 
 router.get('/flightdetails', (req, res, next) => { //gets the flight from the database 
+  console.log("SHOOOOOOOOOOWWWWWWWWWWWWWWWW")
   var query = req.query,
     update = { visited: new Date() },
     options = { upsert: true, new: true, setDefaultsOnInsert: true };

@@ -83,7 +83,7 @@ app.locals.title = 'Airly';
 
 
 const index = require('./routes/index');
-app.use('/api', index);
+app.use('/', index);
 
 const auth = require('./routes/auth');
 app.use('/api', auth);
