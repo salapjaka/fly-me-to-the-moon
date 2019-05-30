@@ -3,7 +3,7 @@ import firebase, { googleProvider, facebookProvider } from "../../config/Fire";
 import { Link, Redirect } from 'react-router-dom'
 import axios from "axios";
 import { baseURL } from '../../config/Fire'
-
+import Navbar from '../Navbar'
 class Login extends Component {
 
     state = {
@@ -108,9 +108,51 @@ class Login extends Component {
 //http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
     render() {
         return (
+              /* {this.state.loggedIn ? <Redirect to="/" /> : false} */
+        <div>
+            <div class='navbar-login'><h4 class="airly">Airly</h4></div>
+            <div className = 'login-background'>
+        
             <Fragment>
-                {/* {this.state.loggedIn ? <Redirect to="/" /> : false} */}
-                <div className="simple-login-container">
+                <div class="container container-login">
+                    <div class="logo"></div>
+                            <div class="login-item">
+                      <form action="" method="post" class="form form-login">
+                        <div class="form-field">
+
+                          <input value={this.state.email} onChange={this.handleChange} type="text" name="email" class="form-input" placeholder='Email'></input>
+                        </div>
+
+                        <div class="form-field">
+                          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+
+                          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" placeholder="Password"id="login-password"  class="form-input" placeholder="Password" required></input>
+                        </div>
+
+                        <div class="form-field">
+                        <input onClick={this.login} type="submit" value="Log in" ></input>
+                        {this.state.message}  
+                        </div>
+
+                        <div class="form-field">
+                          <input onClick={this.facebookLogin}  className='facebook' type="button" value="Continue with Facebook"></input>
+                        </div>
+                        <div class="form-field">
+                          <input onClick={this.googleLogin} className="google" type="button" value="Continue with Google+"></input>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-12 form-group text-center">
+                                <div className="or-box">
+                                    <span><Link to="/signup">Sign up now!</Link></span>
+                                </div>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+
+              
+                {/* <div className="simple-login-container login-container">
                     <div className="row">
                         <div className="col-md-12 text-center">
                         </div>
@@ -152,8 +194,10 @@ class Login extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </Fragment>
+            </div>
+            </div>
         );
     }
 }
