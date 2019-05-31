@@ -90,24 +90,25 @@ getRandomName() {
       
       
          <div className='flight-detail-flex profile'>
-         <div class = 'login-background'></div>
+         <div className = 'login-background'></div>
          <RandomUserGenerator />
         <h4>{this.state.name}</h4>
+        
+        <p>{this.state.profile.email}</p>
 
-        has been a great member since {moment(this.state.profile.createdAt).format("MMM Do YYYY")} 
+        <h6>has been a great member since {moment(this.state.profile.createdAt).format("MMM Do YYYY")} </h6>
      
 
-        <div class = 'request'><p>Request for {this.state.name} to carry your package on flight 
-        {this.state.flightData.carrier} from {this.state.flightData.from} to  {this.state.flightData.to} on 
-        {moment(this.state.flightData.date).format("MMM Do YYYY")} ?
+        <div className = 'request'><p>Request for <h7 className='blue'>{this.state.name}</h7> to carry your package on flight  <h7 className='blue'>{this.state.flightData.carrier}</h7> from <h7 className='blue'>{this.state.flightData.from}</h7> to  <h7 className='blue'>{this.state.flightData.to}</h7> on  
+        <h7 className='blue'>{moment(this.state.flightData.date).format("MMM Do YYYY")} </h7>?
         <br></br></p><div>
 
         <div className="">
           <form onSubmit={this.savePackage}>
-            <div class = 'small-labels'>Contents:</div> <div class="col"><textarea onChange={this.addPackage} class="form-control request" type="text" name="content" placeholder='Tell them what it is. Hi! I have some documents I need urgently delivered to my office in Sydney.'></textarea></div>
-            <div class = 'small-labels'>Price:</div> <div class="col"><input onChange={this.addPackage} class="form-control request" type="text" name="price" placeholder='How much would you like to pay? e.g.: $100'></input></div>
+            <div class = 'small-labels'>Contents:</div> <div class="col"><textarea onChange={this.addPackage} class="form-control textarea" type="text" name="content" placeholder='Tell them what it is. Hi! I have some documents I need urgently delivered to my office in Sydney.'></textarea></div>
+            <div class = 'small-labels'>Price: </div><div class="col"><input onChange={this.addPackage} class="form-control textarea" type="text" name="price" placeholder='How much would you like to pay? e.g.: $100'></input></div>
             <br></br>
-            <div><button class = 'search-main' type="submit">Submit</button></div>
+            <div><button class = "search-main" type="submit">Submit</button></div>
           </form>
         </div>
        </div>
