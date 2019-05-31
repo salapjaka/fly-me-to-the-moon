@@ -25,7 +25,7 @@ state = {
   showFlights=() => {
     return this.state.myFlights.map((flight,i)=>{
       return<div>
-      On flight <h7 class='blue'>{flight.carrier}</h7> this date of <h7 class='blue'>{flight.date.slice(0, 10)}</h7> from <h7 class='blue'>{flight.from} </h7>to <h7 class='blue'>{flight.to}</h7> </div>
+      On flight <h7 class='blue'>{flight.carrier}</h7> this date of <h7 class='blue'>{moment(flight.date).format("MMM Do YYYY")}</h7> from <h7 class='blue'>{flight.from} </h7>to <h7 class='blue'>{flight.to}</h7> </div>
     })
   }
 

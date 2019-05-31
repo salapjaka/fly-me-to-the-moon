@@ -45,7 +45,7 @@ getRandomName() {
       .then(profileFromServer => {
         console.log('profile', profileFromServer)
         let flightData = this.queryfie(this.props.location.search)
-        console.log(flightData)
+        console.log(profileFromServer)
         this.setState({
           profile: profileFromServer.data,
           flightData: flightData,
@@ -93,11 +93,20 @@ getRandomName() {
          <div className = 'login-background'></div>
          <RandomUserGenerator />
         <h4>{this.state.name}</h4>
+        {console.log(this.state)}
         
-        <p>{this.state.profile.email}</p>
+        {this.state.profile? 
+                <Fragment>
+
+        <p>{this.state.profile.email}</p> 
 
         <h6>has been a great member since {moment(this.state.profile.createdAt).format("MMM Do YYYY")} </h6>
-     
+        </Fragment>
+
+        : 
+     <div>    do nothing</div>
+        }
+        
 
         <div className = 'request'><p>Request for <h7 className='blue'>{this.state.name}</h7> to carry your package on flight  <h7 className='blue'>{this.state.flightData.carrier}</h7> from <h7 className='blue'>{this.state.flightData.from}</h7> to  <h7 className='blue'>{this.state.flightData.to}</h7> on  
         <h7 className='blue'>{moment(this.state.flightData.date).format("MMM Do YYYY")} </h7>?
