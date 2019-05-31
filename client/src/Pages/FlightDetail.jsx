@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import { baseURL } from '../config/Fire'
+import Footer from './Footer'
+
 
 class FlightDetail extends Component {
 
@@ -43,7 +45,8 @@ class FlightDetail extends Component {
 
   showPassengers = () => {
     return this.state.passengers.map((passenger,i) => {
-      return <div><button onClick = {()=>{this.pickPassenger(passenger.uid)}}>{passenger.email}</button>
+      return <div><button  className= 'button-carrier passenger-list-title button-styled' 
+      onClick = {()=>{this.pickPassenger(passenger.uid)}}>{passenger.email}</button>
       </div>
       
       // <button onClick={() => { this.pickPassenger(passenger.name) }}>{passenger.name}</button>
@@ -64,22 +67,26 @@ class FlightDetail extends Component {
   render() {
 
     return (
+     
+     <div className='flight-detail-flex'>
       <Fragment>
-      
-        {this.props.user ?
-
-          <div>
-            Flight details:
-        <br></br>
-            People registered for this flight: <li>{this.showPassengers()}</li>
-            <br></br>
-            <button onClick={this.imTakingFlight}>I'm taking this flight</button>
+    
+    {this.props.user ?
+          <div class = 'login-background'>
+            <div class='button-taking-flight'><button class='taking-flight' onClick={this.imTakingFlight}>I'm taking this flight</button></div>
+            <div class='passenger-list-title'>Users registered for this flight who will be able to carry your package: </div>
+            {this.showPassengers()}
           </div>
-
           :
-          <Redirect to='/login' />
+          <Redirect to={{pathname: '/login', state: { prevPath: window.location.pathname + window.location.search }}}/>
+          // <Redirect to='/login' />
+          // http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
       }
+    
     </Fragment>
+   <Footer />
+    </div>
+   
     );
   }
 }

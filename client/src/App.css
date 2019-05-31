@@ -1,5 +1,8 @@
+
+
+
 body {
-  background-color: white;
+  background-color: rgb(255, 255, 255) !important;
   font-family: "SF Pro Text";
 
 }
@@ -51,6 +54,9 @@ body {
 .login-background {
   background-color: rgb(46,141,255);
   height: 85px;
+  display: flex;
+  flex-direction: column;
+  
 }
 .login-container {
   /* margin: 0 30%; */
@@ -58,7 +64,6 @@ display:flex;
 
 }
 .facebook {
- 
   background-color: #3b5998;
 }
 
@@ -74,8 +79,8 @@ display:flex;
   top: 12%;    
   left: 85%;
   text-shadow: 2px 2px 2px rgba(0,0,0,.8);  
-} */
-/* .log-in {	
+}
+.log-in {	
   height: 18px;	
   	
   color: #FFFFFF;	
@@ -152,14 +157,21 @@ color:white;
   color:rgb(46,141,255);
   font-weight: bold;
 }
+
+
+
 .middle-column {
   position: relative;
   left: 12vw;
 }
 .footer {
-  background-color: #2EC1FF;
+  background-color: rgb(46,141,255);
   height: 50px;
   width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .footer-text {
   height: 12px;	
@@ -182,28 +194,47 @@ color:white;
 
 .input-main {
   border: none;
-  
   padding-top: 20px;
 }
 .input-main input{
-  border-radius: 4px;
+  /* border-radius: 4px; */
   border: none;
-  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+  border-bottom: 2px solid rgb(46,141,255);
   padding:10px;
-  text-align: center;
+  text-align: left;
+  margin: 0.7em;
+
 }
-.input-main button {
+/* .input-main button {
   border-radius: 4px;
-  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+  border-bottom: 1px solid rgb(46,141,255);
+} */
+.search-main {
+  background-color: #ff702d;
+  border:none;
+  color: white;
+  height: 45px;	
+  width: 110px;
 }
+.request {
+  height: 18px;	
+  
+  color: #000000;	
+  font-family: "SF Pro Text";	
+  font-size: 12px;	
+  	
+  letter-spacing: 0.25px;	
+  line-height: 18px;
+}
+
 .description {
   display: flex;
-  border-bottom: 1px solid rgba(20, 56, 85, 0.568);
+  border-bottom: 1px solid rgb(46,141,255);
   padding: 10px;
 }
 
 .signup-login {
-  width: 160px;
+  /* width: 160px; */
  
   /* left: 57vw; */
   /* position: relative; */
@@ -219,7 +250,6 @@ color:white;
 }
 
 .signup-login a {
-  margin-left: 20px;
   text-decoration: none;
   color: white;
   
@@ -241,7 +271,9 @@ color:white;
   font-weight: 500;	
 }
 
-
+.flex-flight-details {
+  display:flex;
+}
 /* login page css*/
   .container-login {
     /* background:white; */
@@ -261,6 +293,7 @@ color:white;
   }
 
   .taking-flight {
+    margin-top:100px;
     background-color: #ff702d;
     color: #eee;
     font-weight: bold;
@@ -276,10 +309,11 @@ color:white;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
   .flight-detail-flex {
     display: flex;
-    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    /* box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1); */
     /* width: 450px; */
     flex-direction: column;
   }
@@ -311,6 +345,7 @@ color:white;
   line-height: 18px;
   border: none;
   padding: 1em 3em;
+  margin: 10px 10%;
 }
 
 .flight-details-title {
@@ -326,6 +361,29 @@ width: 600px;
 padding: 1em;
 }
 
+
+.button-carrier {
+  margin-top: 1em;
+  font-family: "SF Pro Text";
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.25px;
+  line-height: 18px;
+  background: none !important;
+  height: 18px;	
+  color: #000000;	
+  font-family: "SF Pro Text";	
+  border: none;
+  padding: 1em 3em;
+  margin: 5px 10%;
+text-align:left;    
+}
+
+.small-labels {
+  font-size: 0.5em;
+  text-align: left;
+  margin-left: 20px;
+}
 
   .form input {
     width: 100%;
@@ -388,12 +446,82 @@ padding: 1em;
   
 .nav-new {
   display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
+  justify-content: space-between;
+  padding: 10px 20px;
   position: fixed;
   width: 100%
 }
 
+.float-right-navbar {
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+justify-content: center;
+text-align: -webkit-right;
+}
+
+
+
+/* random pic generator css*/
+.profile{
+  text-align: center;
+}
+
+.usersTicketsContainer{
+  
+}
+
+.ticketsList{
+  list-style:none;
+  padding:0;
+}
+
+.userContainer{
+  border:2px solid blue;
+  background:lightgrey;
+}
+
+.picContainer{
+  border:1px solid white;
+  border-radius:50%;
+}
+
+.infoContainer{
+  border:1px solid black;
+}
+
+.avatarContainer{
+  border: none;
+
+}
+
+.controlsContainer{
+  
+}
+
+.displayDataContainer{
+  font-size:20px;
+  margin:10px 0 10px 0;
+}
+
+.iconsContainer{
+  display:flex;
+  justify-content:space-around;
+}
+
+
+.fa{
+  font-size:40px;
+}
+
+.iconsContainer li:active{
+  color:blue;
+}
+
+.selected{
+  color:green;
+}
 
 
  /* |--><Main /> page

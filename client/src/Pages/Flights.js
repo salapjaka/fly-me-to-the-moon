@@ -109,15 +109,21 @@ class Flights extends Component {
     return flights.map((flight, i) => {
       console.log('each', flight);
 
-      return <div>
-        <Link key={i}
+      return <div class='container'>
+        <Link class = 'link' key={i}
           to={`/flightdetail/${flight.quote.QuoteId}?date=${flight.date}&to=${flight.flightPlaces.destination}&from=${flight.flightPlaces.origin}&carrier=${flight.carrier.Name}`}>
-          <div>{flight.quote.QuoteId}
-            - Carrier: {flight.carrier.Name}
-            - Date: {flight.date.slice(0, 10)}
-            {/* - Time: {flight.flightTimes} */}
-            - From {flight.flightPlaces.origin}
-            - To {flight.flightPlaces.destination}
+          <div className='list-flights'>
+            <div>
+              <h7 class="blue">{flight.quote.QuoteId}</h7> 
+              {flight.carrier.Name} 
+            </div>
+            <div>{flight.date.slice(0, 10)} at 2:55pm (EST)</div>
+            {/* <div>Time: {flight.flightTimes}</div> */}
+            {/* <div>Time: 2:55pm</div> */}
+            <div>
+              <img class="middle-column" width='30px' src='./images/plane.png' alt='plane'></img></div>
+            <div>
+            {flight.flightPlaces.origin} to {flight.flightPlaces.destination}</div>
           </div>
         </Link>
       </div>
@@ -188,19 +194,19 @@ class Flights extends Component {
 
           <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
           <br></br>
-          Origin: {this.state.originPlace}
+          {/* Origin: {this.state.originPlace}
           <br></br>
           Destination: {this.state.destinationPlace}
-          <br></br>
+          <br></br> */}
 
           <input type="date" name="outboundPartialDate" onChange={this.handleDates} />
           <input type="date" name="inboundPartialDate" onChange={this.handleDates} />
           <br></br>
-          From: {this.state.outboundPartialDate}
+          {/* From: {this.state.outboundPartialDate}
           <br></br>
-          To: {this.state.inboundPartialDate}
+          To: {this.state.inboundPartialDate} */}
           <br></br>
-          <button type='submit'>Search</button>
+          <button class='search-main'type='submit'>Search</button>
         </form>
         {/* {this.showFlights()} */}
 
@@ -219,8 +225,8 @@ class Flights extends Component {
         </div>
 
        {this.showFlights()}
-        < Description />
-            <Footer />
+        <Description />
+        <Footer />
         </div>
 
 

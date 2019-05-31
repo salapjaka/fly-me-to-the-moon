@@ -1,14 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Axios from 'axios';
 import moment from 'moment'
 import { baseURL } from '../config/Fire'
+import { Redirect } from 'react-router-dom'
+import Footer from './Footer'
+import RandomUserGenerator from './RandonUserGenerator'
+
+const names = [
+  'Yoda',
+  'Jack Sparrow',
+  'Captain Kirk',
+  'Spock',
+  'Optimus Prime',
+  'Gandalf',
+  'Inigo Montoya',
+  'Magneto',
+  'Tony Stark',
+  'Bilbo Baggins',
+  'Legolas',
+  'Inspector Clouseau',
+  'Obi Wan'
+];
+
+
+
 class Profile extends Component {
 
+
+
   state = {
+    name: this.getRandomName(),
     profile: {},
     flightData: {}
-
   }
+
+getRandomName() {
+  return names[Math.floor(Math.random() * names.length)];
+}
+
 
   componentDidMount() {
     console.log('hehehehey', this.props.match.params.uid)
@@ -24,6 +53,9 @@ class Profile extends Component {
         })
       })
   }
+
+
+
 
   queryfie(string) {
     return string
@@ -55,32 +87,37 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
-        Profile page <br></br>
+      
+      
+         <div className='flight-detail-flex profile'>
+         <div class = 'login-background'></div>
+         <RandomUserGenerator />
+        <h4>{this.state.name}</h4>
 
-        {this.state.profile.email} has been a great member since {this.state.profile.createdAt}
-        <br></br>
+        has been a great member since {moment(this.state.profile.createdAt).format("MMM Do YYYY")} 
+     
 
-        <h3>Would you like
-        {this.state.profile.email} to take your package from
-        {this.state.flightData.from} to
-        {this.state.flightData.to}  on a
-        {this.state.flightData.carrier} flight on the date of
-        {moment(this.state.flightData.date).format("MMM Do YYYY")} ???
-        <br></br></h3>
+        <div class = 'request'><p>Request for {this.state.name} to carry your package on flight 
+        {this.state.flightData.carrier} from {this.state.flightData.from} to  {this.state.flightData.to} on 
+        {moment(this.state.flightData.date).format("MMM Do YYYY")} ?
+        <br></br></p><div>
 
-
-        <div className="form-group-column">
+        <div className="">
           <form onSubmit={this.savePackage}>
-            Content: <div class="col"><input onChange={this.addPackage} class="form-control" type="text" name="content"></input></div>
-            Price: <div class="col"><input onChange={this.addPackage} class="form-control" type="text" name="price"></input></div>
+            <div class = 'small-labels'>Contents:</div> <div class="col"><textarea onChange={this.addPackage} class="form-control request" type="text" name="content" placeholder='Tell them what it is. Hi! I have some documents I need urgently delivered to my office in Sydney.'></textarea></div>
+            <div class = 'small-labels'>Price:</div> <div class="col"><input onChange={this.addPackage} class="form-control request" type="text" name="price" placeholder='How much would you like to pay? e.g.: $100'></input></div>
             <br></br>
-            <div><button type="submit">Submit</button></div>
+            <div><button class = 'search-main' type="submit">Submit</button></div>
           </form>
         </div>
+       </div>
+       <Footer />
       </div>
+      </div>
+
     );
   }
+  
 }
 
 export default Profile;

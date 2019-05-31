@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import fire from 'firebase'
 import { baseURL } from '../config/Fire'
+
 class Navbar extends Component {
 
 
@@ -24,18 +25,19 @@ class Navbar extends Component {
                     {this.props.user ?
                         <Fragment>
                             <Link class='airly'to="/">Airly</Link>
-
-                            <Link to="/myProfile">Hello {this.props.user.email}</Link>
-                            <Link className="signup-logins" onClick={this.logout}>Logout</Link>
+                            
+                            <div class = 'float-right-navbar'><Link to="/myProfile"> <div class='signup-login'>You are logged in as</div><div class='signup-login'>{this.props.user.email}</div> </Link>
+                            <Link className="signup-login" onClick={this.logout}>Logout</Link></div>
                         </Fragment>
                         :
-                        <div className="signup-logins">
-                            <Link class = 'signup-login' to='/signup'>SIGN UP</Link>
-                            <Link to='/login'>LOG IN</Link>
-                        </div >
+                        <Fragment>
+                            <Link class='signup-login' to='/signup'>SIGN UP</Link>
+                            <Link class='signup-login' to='/login'>LOG IN</Link>
+                        </Fragment>
                     }
 
                 </div>
+                
             </Fragment>
         );
     }
