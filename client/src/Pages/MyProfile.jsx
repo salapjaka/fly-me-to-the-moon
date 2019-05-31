@@ -31,7 +31,7 @@ state = {
 
   showMyPacks=() => {
     return this.state.myPacks.map((pack,i)=>{
-      return <div><h7 class='blue'>{pack.content}</h7> for <h7 class='blue'>$ {pack.price} </h7>
+      return <div><h7>{pack.content}</h7> for <h7 class='blue'>$ {pack.price} </h7>
       requested on <h7 class='blue'>{moment(pack.createdAt).format("MMM Do YYYY")}</h7> by <h6 class='blue'>{pack.profile.email}</h6> from <h7 class='blue'>{pack.flightData.from} </h7> to {pack.flightData.to} on a 
       {pack.flightData.carrier} flight on <h7 class='blue'>{moment(pack.flightData.date).format("MMM Do YYYY")}</h7>
       </div>
