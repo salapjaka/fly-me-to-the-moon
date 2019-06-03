@@ -8,13 +8,15 @@ class Navbar extends Component {
 
 
     componentDidMount() {
+        console.log(this, 99999999)
         axios.get(`${baseURL}/`)
             .then((u) => {
                 console.log(u.data)
             })
     }
     logout = () => {
-        fire.auth().signOut()
+        fire.auth().signOut().then(res=>{
+        })
     }
 
 
@@ -27,7 +29,7 @@ class Navbar extends Component {
                             <Link class='airly'to="/">Airly</Link>
                             
                             <div class = 'float-right-navbar'><Link to="/myProfile"> <div class='signup-login'>You are logged in as</div><div class='signup-login'>{this.props.user.email}</div> </Link>
-                            <Link className="signup-login" onClick={this.logout}>Logout</Link></div>
+                            <Link to ='/' className="signup-login" onClick={this.logout}>Logout</Link></div>
                         </Fragment>
                         :
                         <Fragment>

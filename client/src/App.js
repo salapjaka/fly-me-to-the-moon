@@ -51,7 +51,7 @@ class App extends Component {
         console.log("THIS IS FROM APP.JS=============", this.state.user.email)
         return (
             <div>
-                        <Navbar user={this.state.user}/>
+                        <Navbar {...this.props} user={this.state.user}/>
                         <Switch>
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/signup" component={Signup} />

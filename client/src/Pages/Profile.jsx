@@ -7,18 +7,18 @@ import Footer from './Footer'
 import RandomUserGenerator from './RandonUserGenerator'
 
 const names = [
-  'Yoda',
-  'Jack Sparrow',
-  'Captain Kirk',
-  'Spock',
-  'Optimus Prime',
-  'Gandalf',
+  'Cassidy Irish',
+  'Andy Brown',
+  'Angel Crow',
+  'August Spencer',
+  'Cameron Parker',
+  'Finley Cooper',
   'Inigo Montoya',
-  'Magneto',
-  'Tony Stark',
-  'Bilbo Baggins',
-  'Legolas',
-  'Inspector Clouseau',
+  'Jackie Stark',
+  'Pepper Salt',
+  'Jesse Baggins',
+  'Justice Fair',
+  'Kai Bodroff',
   'Obi Wan'
 ];
 

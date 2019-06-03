@@ -4,6 +4,12 @@ import { baseURL } from '../config/Fire'
 import RandomUserGenerator from './RandonUserGenerator'
 import Footer from './Footer'
 import moment from 'moment'
+import styled from 'styled-components'
+
+// const newFooter=styled(Footer)`
+// position: absolute-value;
+// bottom:0;
+// `
 
 class MyProfile extends Component {
 state = {
@@ -67,7 +73,8 @@ state = {
         <div className='item'><h5>Packs that I need to carry:</h5><br></br>
         {this.showYourPacks()}</div><br></br>
         </div>
-        <Footer />
+        {/* <div style={{position:'relative'}}><newFooter /></div> */}
+<Footer />
       </div>
     );
   }

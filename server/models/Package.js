@@ -8,7 +8,7 @@ const packageSchema = new Schema({
   profile:   Object,
   flightData: Object,
   content:    String,
-  price:      Number
+  price:      String,
 }, {
     timestamps: true
   });
