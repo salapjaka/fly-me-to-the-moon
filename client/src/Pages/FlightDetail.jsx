@@ -84,7 +84,7 @@ class FlightDetail extends Component {
       }
     
     </Fragment>
-   {/* <Footer /> */}
+
     </div>
    
     );

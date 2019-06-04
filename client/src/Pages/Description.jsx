@@ -4,37 +4,33 @@ class Description extends Component {
     return (
       <div>
         <h2 className='description-title'>WHAT IS AIRLY?</h2>
-        
-        <div className='description'>
-          <div>There is a reason Airly is trusted by over a million passengers and shippers weekly. 
-        We find the nearest/next available flight comparing millions of flight options 
-        from airlines and travel agents. 
-        Additionally, we connect you with the people who are willing to help you 
-        transport your urgent package to another country within a matter of hours.
-        Once you choose your flight - we will connect you to the list of passenger where you can process your request and negotiate the conditions.
-        And there is no added fees!
-          </div>
-          <div>
-          There is a reason Airly is trusted by over a million passengers and shippers weekly. 
-        We find the nearest/next available flight comparing millions of flight options 
-        from airlines and travel agents. 
-            Additionally, we connect you with the people who are willing to help you 
-        transport your urgent package to another country within a matter of hours.
-        Once you choose your flight - we will connect you to the list of passenger where you can process your request and negotiate the conditions.
-        And there is no added fees!
-          </div>
-          <div>
-          There is a reason Airly is trusted by over a million passengers and shippers weekly. 
-        We find the nearest/next available flight comparing millions of flight options 
-        from airlines and travel agents. 
-          Additionally, we connect you with the people who are willing to help you 
-        transport your urgent package to another country within a matter of hours.
-        Once you choose your flight - we will connect you to the list of passenger where you can process your request and negotiate the conditions.
-        And there is no added fees!
+        <div class='description'>
+          <div class='description-row'>
+            <div class='description-column'>
+              <div class='images-column'>
+              <div><img src = '/images/Map.png' alt = 'map'></img></div>
+              Enter a range of dates to start your search. 
+              </div>
             </div>
+            <div class='description-column'>
+              <div class='images-column'>
+              <div><img src = '/images/People.png' alt = 'map'></img></div>
+
+              After selecting a flight, you will be given a list of all users available to carry your package with them on the flight.
+
+              </div>
+            </div>
+            <div class='description-column'>
+              <div class='images-column'>
+              <div><img src = '/images/Meeting.png' alt = 'map'></img></div>
+
+              Contact a user of your choice, tell them what the package is, and negotiate the price. Bon voyage!
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
-    </div>
     );
   }
 }

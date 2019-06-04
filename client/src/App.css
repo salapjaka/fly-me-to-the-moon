@@ -5,6 +5,8 @@ body {
   background-color: #ffffff !important;
   font-family: "Helvetica";
 }
+/* people by Shastry from the Noun Project */
+
 
 .background {
   height: 600px;
@@ -220,6 +222,7 @@ color:white;
   width: 110px;
   font-weight: bold;
 }
+
 .request {
   height: 18px;	
   
@@ -231,24 +234,51 @@ color:white;
   line-height: 18px;
 }
 .textarea {
-  height: 18px;	
   border-radius: 0;
-  color: #000000;	
+  /* color: #000000;	 */
   /* font-family: "SF Pro Text";	 */
-  font-size: 12px;	
-  border: none;
+  font-size: 14px;	
   border: 2px solid  #2DC2FF;
   letter-spacing: 0.25px;	
-  line-height: 18px;
-
-}
-.description {
   display: flex;
-  border-bottom: 1px solid  #2DC2FF;
-  padding: 10px;
+  justify-content: center;
+  align-content: center;
 }
 
-/*responsive columns on Myprofile*/
+/* description  */
+
+.description {
+  margin: 15px;
+}
+.description-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.description-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.images-column {
+  margin: 0.8em;
+  text-align: left;
+  /* display: flex; */
+}
+.images-column img {
+  width: 50%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.images-column div {
+  text-align: center;
+}
+
+/* columns on Myprofile*/
 
 .items {
 	display: flex;
@@ -373,7 +403,7 @@ h4 {
 
 }
 .passenger-list-title {
-  height: 18px;	
+  /* height: 18px;	 */
   color: #000000;	
   /* font-family: "SF Pro Text";	 */
   font-size: 15px;	
@@ -422,7 +452,9 @@ text-align:left;
   margin-left: 20px;
   color: gray;
 }
-
+.submit-button {
+  margin: 10px;
+}
   .form input {
     width: 100%;
   }

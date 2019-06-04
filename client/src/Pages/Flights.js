@@ -241,7 +241,7 @@ class Flights extends Component {
 
        {this.showFlights()}
         <Description />
-        <Footer />
+        {/* <Footer /> */}
         </div>
 
 

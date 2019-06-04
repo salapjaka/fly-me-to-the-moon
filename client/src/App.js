@@ -63,7 +63,7 @@ class App extends Component {
                             <Route exact path="/myProfile" component={ (props) => <MyProfile {...props} uid={this.state.user.uid} />} />
 
                         </Switch>
-                       
+                        {/* <Footer /> */}
                         </div>
         );
     }
