@@ -14,6 +14,7 @@ import axios from 'axios';
 import Flights from './Pages/Flights';
 import FlightDetail from './Pages/FlightDetail';
 import MyProfile from './Pages/MyProfile'
+import Footer from './Pages/Footer';
 
 
 
@@ -48,6 +49,7 @@ class App extends Component {
     }
 
     render() {
+        
         console.log("THIS IS FROM APP.JS=============", this.state.user.email)
         return (
             <div>
@@ -61,7 +63,7 @@ class App extends Component {
                             <Route exact path="/myProfile" component={ (props) => <MyProfile {...props} uid={this.state.user.uid} />} />
 
                         </Switch>
-                        
+                       
                         </div>
         );
     }

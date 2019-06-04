@@ -82,7 +82,15 @@ class Login extends Component {
 
     facebookLogin = () => {
         firebase.auth().signInWithPopup(facebookProvider)
-            .then((u) => { console.log(u) }
+            .then((u) => { console.log(u)
+                if(this.props.location.state)
+                {
+                    window.setTimeout(() => this.props.history.push(this.props.location.state.prevPath),0)
+                } else {
+                    this.props.history.push('/')
+
+                }
+            }
             ).catch((error) => {
 
                 this.setState({
@@ -92,7 +100,38 @@ class Login extends Component {
             })
     };
 
+    login = (e) => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((u) => {
+                console.log(u);
+                if(this.props.location.state)
+                {
+                    window.setTimeout(() => this.props.history.push(this.props.location.state.prevPath),0)
+                } else {
+                    this.props.history.push('/')
 
+                }
+
+                //Bug
+                axios.post(`${baseURL}/login`).then(res => {
+                    console.log("asdasdsadsad", res.data);
+                })
+                    .catch(err => {
+                        console.error(err)
+                    })
+
+                this.setState({
+                    loggedIn: true
+                })
+            }
+            ).catch((error) => {
+                this.setState({
+                    message: error.message
+                })
+                console.log(error)
+            })
+    }
 
 
     //On Change form listener

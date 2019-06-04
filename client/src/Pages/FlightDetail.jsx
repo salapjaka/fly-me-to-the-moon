@@ -45,7 +45,7 @@ class FlightDetail extends Component {
 
   showPassengers = () => {
     return this.state.passengers.map((passenger,i) => {
-      return <div><button  className= 'button-carrier passenger-list-title button-styled' 
+      return <div><button  className= 'button-carrier passenger-list-title' 
       onClick = {()=>{this.pickPassenger(passenger.uid)}}>{passenger.email}</button>
       </div>
       
@@ -84,7 +84,7 @@ class FlightDetail extends Component {
       }
     
     </Fragment>
-   <Footer />
+   {/* <Footer /> */}
     </div>
    
     );

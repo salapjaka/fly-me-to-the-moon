@@ -28,7 +28,7 @@ class Navbar extends Component {
                         <Fragment>
                             <Link class='airly'to="/">Airly</Link>
                             
-                            <div class = 'float-right-navbar'><Link to="/myProfile"> <div class='signup-login'>You are logged in as</div><div class='signup-login'>{this.props.user.email}</div> </Link>
+                            <div class = 'float-right-navbar'><Link to="/myProfile"> <div class='signup-login'>Hello, </div><div class='signup-login'>{this.props.user.email}</div> </Link>
                             <Link to ='/' className="signup-login" onClick={this.logout}>Logout</Link></div>
                         </Fragment>
                         :

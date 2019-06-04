@@ -190,9 +190,14 @@ class Flights extends Component {
         <div className="container-2 input-main">
 
         <form onSubmit={this.getFlights}>
-          <input type="text" name="originPlace" value="Miami" onChange={this.searchFlights} placeholder="origin....." />
-
-          <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
+          <p className = 'shipOrCarry'>SHIP or CARRY</p>
+          
+          
+            <input type="text" name="originPlace" value="Miami" onChange={this.searchFlights} placeholder="origin....." />
+        
+            <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
+         
+          
           <br></br>
           {/* Origin: {this.state.originPlace}
           <br></br>
@@ -211,18 +216,28 @@ class Flights extends Component {
         {/* {this.showFlights()} */}
 
 
-
-        <div className='container'>
+          {this.state.quotes.length > 0 && (  <div className='container'>
           <div className = 'link'>
             <div className='list-flights'>
                   <div className = "align-left titles">Airline</div>
                   <div className = "titles"> Date and Time</div>
-                  {/* <div>Time: {flight.flightTimes}</div> */}
+                 
                   <div></div> 
                   <div className = "titles">Destination </div>
             </div>
           </div>
-        </div>
+        </div>)}
+        {/* <div className='container'>
+          <div className = 'link'>
+            <div className='list-flights'>
+                  <div className = "align-left titles">Airline</div>
+                  <div className = "titles"> Date and Time</div>
+                 
+                  <div></div> 
+                  <div className = "titles">Destination </div>
+            </div>
+          </div>
+        </div> */}
 
        {this.showFlights()}
         <Description />
