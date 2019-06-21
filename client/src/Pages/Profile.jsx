@@ -45,7 +45,7 @@ getRandomName() {
       .then(profileFromServer => {
         console.log('profile', profileFromServer)
         let flightData = this.queryfie(this.props.location.search)
-        console.log(profileFromServer)
+        console.log('profile please', profileFromServer)
         this.setState({
           profile: profileFromServer.data,
           flightData: flightData,

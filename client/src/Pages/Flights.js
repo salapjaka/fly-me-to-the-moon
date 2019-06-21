@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import Description from './Description'
-import Footer from './Footer'
+// import Footer from './Footer'
 // import auth0Client from '../Auth';
 
 
@@ -16,8 +16,8 @@ class Flights extends Component {
     carriers: [],
     quotes: [],
     places: [],
-    originPlace: 'MIA-sky',
-    destinationPlace: 'SYDA-sky',
+    originPlace: '',  //example - 'MIA-sky'
+    destinationPlace: '', //'SYDA-sky'
     outboundPartialDate: '',
     inboundPartialDate: ''
   }
@@ -102,10 +102,7 @@ class Flights extends Component {
 
       return result;
     });
-    // 
-
-    // var flightTimes = this.randomTime(flights.length);
-    // console.log( 'times?', flightTimes );
+   
     return flights.map((flight, i) => {
       console.log('each', flight);
 
@@ -193,9 +190,9 @@ class Flights extends Component {
           <p className = 'shipOrCarry'>SHIP or CARRY</p>
           
           
-            <input type="text" name="originPlace" value="Miami" onChange={this.searchFlights} placeholder="origin....." />
+            <input type="text" name="originPlace"  onChange={this.searchFlights} placeholder="origin....." />
         
-            <input type="text" name="destinationPlace" value="Sydney" onChange={this.searchFlights} placeholder="destination....." />
+            <input type="text" name="destinationPlace" onChange={this.searchFlights} placeholder="destination....." />
          
           
           <br></br>

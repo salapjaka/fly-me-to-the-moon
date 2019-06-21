@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Flight = require('../models/Flight')
 const User = require('../models/User')
-const Package=require('../models/Package')
+const Package = require('../models/Package')
+
+
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.json({ location: "HOME PAGE" })

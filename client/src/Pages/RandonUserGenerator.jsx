@@ -6,7 +6,9 @@ class User extends React.Component {
     
   constructor(props){
       super(props);
-      this.state = {userTicketsData: []};
+      this.state = {
+          userTicketsData: []
+        };
       this.clearUsers = this.clearUsers.bind(this);
       this.requestUser = this.requestUser.bind(this);
       this.generate = this.generate.bind(this);

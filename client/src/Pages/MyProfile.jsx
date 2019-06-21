@@ -75,6 +75,9 @@ state = {
         </div>
         {/* <div style={{position:'relative'}}><newFooter /></div> */}
 <Footer />
+
+<input type="button" value="Count" id="countButton" />
+<p>The button was pressed <span id="displayCount">0</span> times.</p>
       </div>
     );
   }
