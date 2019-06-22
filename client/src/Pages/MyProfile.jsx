@@ -61,7 +61,7 @@ state = {
 
         <div className='flight-detail-flex profile my-profile'>
          <div className = 'login-background'></div>
-          <h4>MyProfile </h4>
+          <h4>My Profile </h4>
       
          <RandomUserGenerator />
         {this.props.email}<br></br>
@@ -73,6 +73,7 @@ state = {
         <div className='item'><h5>Packs that I need to carry:</h5><br></br>
         {this.showYourPacks()}</div><br></br>
         </div>
+        
         {/* <div style={{position:'relative'}}><newFooter /></div> */}
 <Footer />
 
