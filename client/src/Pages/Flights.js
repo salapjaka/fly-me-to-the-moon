@@ -189,27 +189,27 @@ class Flights extends Component {
         <form onSubmit={this.getFlights}>
           <p className = 'shipOrCarry'>SHIP or CARRY</p>
           
-          
-            <input type="text" name="originPlace"  onChange={this.searchFlights} placeholder="origin....." />
+          <div class='form-align'>
+            <div><input type="text" name="originPlace"  onChange={this.searchFlights} placeholder="origin....." />
         
             <input type="text" name="destinationPlace" onChange={this.searchFlights} placeholder="destination....." />
-         
-          
-          <br></br>
+         </div>
           {/* Origin: {this.state.originPlace}
           <br></br>
           Destination: {this.state.destinationPlace}
           <br></br> */}
-
-          <input type="date" name="outboundPartialDate" onChange={this.handleDates} />
-          <input type="date" name="inboundPartialDate" onChange={this.handleDates} />
-          <br></br>
+          <div>
+          <input class = 'input-width' type="date" name="outboundPartialDate" onChange={this.handleDates} />
+          <input class = 'input-width' type="date" name="inboundPartialDate" onChange={this.handleDates} />
+          </div>
+          </div>
           {/* From: {this.state.outboundPartialDate}
           <br></br>
           To: {this.state.inboundPartialDate} */}
-          <br></br>
+          
           <button class='search-main'type='submit'>Search</button>
         </form>
+        
         {/* {this.showFlights()} */}
 
 

@@ -208,8 +208,12 @@ color:white;
   padding:10px;
   text-align: left;
   margin: 0.7em;
-
 }
+.input-width {
+  width: 167px;
+  height: 43px;
+}
+
 /* .input-main button {
   border-radius: 4px;
   border-bottom: 1px solid rgb(46,141,255);
@@ -541,10 +545,6 @@ text-align: -webkit-right;
   text-align: center;
 }
 
-.usersTicketsContainer{
-  
-}
-
 .ticketsList{
   list-style:none;
   padding:0;
@@ -566,11 +566,6 @@ text-align: -webkit-right;
 
 .avatarContainer{
   border: none;
-
-}
-
-.controlsContainer{
-  
 }
 
 .displayDataContainer{
@@ -610,6 +605,11 @@ text-align: -webkit-right;
 
 }
 }
+@media (max-width:375px) {
+  .moto {
+    top: 30%;
+  }
+  }
  /* |--><Main /> page
       |-->Signup />(gives a pop-up to login or signup and redirects to the Main)
       |-->Login /> (gives a pop-up to login or signup and redirects back to the Main)

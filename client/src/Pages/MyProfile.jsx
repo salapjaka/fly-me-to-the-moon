@@ -37,7 +37,7 @@ state = {
 
   showMyPacks=() => {
     return this.state.myPacks.map((pack,i)=>{
-      return <div><h7>{pack.content}</h7> for <h7 class='blue'>$ {pack.price} </h7>
+      return <div><h7>{pack.content}</h7> for <h7 class='blue'>{pack.price} </h7>
       requested on <h7 class=''>{moment(pack.createdAt).format("MMM Do YYYY")}</h7> by <h6 class=''>{pack.profile.email}</h6> from <h7 class=''>{pack.flightData.from} </h7> to {pack.flightData.to} on a 
       {pack.flightData.carrier} flight on <h7 class=''>{moment(pack.flightData.date).format("MMM Do YYYY")}</h7>
       </div>
@@ -46,7 +46,7 @@ state = {
 
   showYourPacks=() => {
     return this.state.packsICarry.map((packICarry,i)=>{
-      return<div><h7 class=''>{packICarry.content}</h7> for <h7 class=''>${packICarry.price} </h7>
+      return<div><h7 class=''>{packICarry.content}</h7> for <h7 class=''>{packICarry.price} </h7>
       for <h7>{packICarry.profile.email}</h7> from <h7>{packICarry.flightData.from} </h7> 
       to <h7>{packICarry.flightData.to} </h7> on a 
       <h7> {packICarry.flightData.carrier}</h7> flight
@@ -76,8 +76,8 @@ state = {
         {/* <div style={{position:'relative'}}><newFooter /></div> */}
 <Footer />
 
-<input type="button" value="Count" id="countButton" />
-<p>The button was pressed <span id="displayCount">0</span> times.</p>
+{/* <input type="button" value="Count" id="countButton" />
+<p>The button was pressed <span id="displayCount">0</span> times.</p> */}
       </div>
     );
   }
