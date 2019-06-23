@@ -168,6 +168,16 @@ color:white;
   position: relative;
   left: 9vw;
 }
+@media (max-width:375px) {
+  .middle-column {
+    left: 12vw;
+  }
+  .list-flights {
+    width: 80%;
+  }
+}
+
+
 .footer {
   background-color: #2DC2FF;
   height: 50px;
