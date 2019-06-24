@@ -40,6 +40,8 @@ body{
     border-top: 1px solid #dfdfdf;
     padding-top: 20px;
     margin-top:10px;
+    display: flex;
+    justify-content: center;
 }
 .or
 {
@@ -49,5 +51,5 @@ body{
     text-align: center;
     top: -10px;
     width: 40px;
-    left: 130px;
+    
 }
