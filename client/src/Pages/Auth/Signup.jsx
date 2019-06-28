@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import firebase, { googleProvider, facebookProvider } from "../../config/Fire";
+import Footer from '../Footer'
 
 class Signup extends Component {
 
@@ -136,6 +137,7 @@ class Signup extends Component {
                       </form>
                     </div>
                 </div> 
+                <Footer />
             </Fragment>
         );
     }

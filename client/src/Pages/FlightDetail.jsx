@@ -76,19 +76,24 @@ class FlightDetail extends Component {
             <div class='button-taking-flight'><button class='taking-flight' onClick={this.imTakingFlight}>I'm taking this flight</button></div>
             <div class='passenger-list-title'>Users registered for this flight who will be able to carry your package: </div>
             {this.showPassengers()}
+            <Footer />
           </div>
           :
           <Redirect to={{pathname: '/login', state: { prevPath: window.location.pathname + window.location.search }}}/>
           // <Redirect to='/login' />
           // http://localhost:3000/flightdetail/1?date=2019-05-30T00:00:00&to=Sydney&from=Miami&carrier=Qantas
+          
       }
-    
+  
     </Fragment>
 
     </div>
+  
    
     );
+    
   }
+  
 }
 
 export default FlightDetail;

@@ -3,7 +3,7 @@ import firebase, { googleProvider, facebookProvider } from "../../config/Fire";
 import { Link, Redirect } from 'react-router-dom'
 import axios from "axios";
 import { baseURL } from '../../config/Fire'
-
+import Footer from '../Footer'
 
 class Login extends Component {
 
@@ -184,7 +184,9 @@ class Login extends Component {
                         </div>
                       </form>
                     </div>
+                    
                 </div>
+                <Footer />
             </Fragment>
         );
     }
