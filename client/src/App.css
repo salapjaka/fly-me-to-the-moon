@@ -189,6 +189,16 @@ color:white;
   bottom: 0;
   right: 0; */
 }
+.footer1 {
+  background-color: #2DC2FF;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  /* position: absolute; */
+  /* left: 0;
+  bottom: 0;
+  right: 0; */
+}
 .footer-text {
   height: 12px;	
   color: #FFFFFF;	
@@ -200,6 +210,7 @@ color:white;
   padding: 20px;
   font-weight: bold;
 }
+
 .description-title {
   /* font-family: "SF Pro Text"; */
   font-size: 20px;	

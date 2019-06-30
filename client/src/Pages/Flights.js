@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import Description from './Description'
-import Footer from './Footer'
+import Footer1 from './Footer1'
 // import auth0Client from '../Auth';
 
 
@@ -237,11 +237,10 @@ class Flights extends Component {
         </div> */}
 
        {this.showFlights()}
-        <Description />
-        <Footer />
+        <div><Description /></div>
+        
         </div>
-
-
+        <Footer1 />
       </Fragment>);
   }
 }
